@@ -1,0 +1,19 @@
+CREATE TABLE animes (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    genre_id INT REFERENCES genres(id) ON DELETE CASCADE ON UPDATE CASCADE,
+    review TEXT NOT NULL,
+    episodes INT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- CREATE TABLE animes (
+--     id AUTO_INCREMENT PRIMARY KEY,
+--     title VARCHAR(255) NOT NULL,
+--     genre VARCHAR(255) NOT NULL,
+--     review TEXT NOT NULL,
+--     episodes INT NOT NULL,
+--     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+--     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+-- );
